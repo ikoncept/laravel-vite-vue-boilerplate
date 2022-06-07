@@ -1,11 +1,10 @@
 module.exports = {
-  content: [],
-  purge: [
+    content: [
         './resources/js/**/*.{vue,js}',
         './resources/views/**/*.blade.php'
     ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
+    theme: {
+        extend: {},
+    },
+    plugins: [],
 }

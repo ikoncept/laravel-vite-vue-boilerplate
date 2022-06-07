@@ -7,7 +7,8 @@
 
     <title>Laravel</title>
 
-    {{ vite_assets() }}
+    @client
+    @tag('')
 
 </head>
 

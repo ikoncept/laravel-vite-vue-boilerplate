@@ -1,19 +1,17 @@
+import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import laravel from 'vite-plugin-laravel'
+import tailwindcss from 'tailwindcss'
+import autoprefixer from 'autoprefixer'
 
-export default ({ command }) => ({
-    base: command === 'serve' ? '' : '/build/',
+export default defineConfig({
     plugins: [
-		vue()
-	],
-    publicDir: false,
-    build: {
-        manifest: true,
-        outDir: 'public/build',
-        rollupOptions: {
-            input: 'resources/js/app.js',
-        },
-    },
-});
-
-
-
+        vue(),
+        laravel({
+            postcss: [
+                tailwindcss(),
+                autoprefixer(),
+            ]
+        })
+    ]
+})
